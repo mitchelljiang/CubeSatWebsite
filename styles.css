@@ -7,9 +7,25 @@
          url('cascadia-code/Cascadia.ttf') format('ttf'),        
 }
 
+/* The typing effect */
 @keyframes typing {
-    from { width: 0; } /* Start with no width (invisible) */
-    to { width: 100%; } /* End with full width (visible) */
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+.bolded {
+    font-weight: bolder;
+}
+
+section {
+    padding-top: 70px; 
+    /* This ensures that the content of each section is not covered by the content bar */
 }
 
 body {
@@ -37,52 +53,80 @@ nav ul {
     transition: top 0.3s ease; /* Smooth transition for movement */
 }
 
-nav ul li {
-    display: inline;
+nav ul div li {
+    display: inline-block;
     margin-right: 50px;
 }
 
+.button {
+    transition: transform 5s, background-color 0.3s, color 0.3s;
+    scroll-behavior: smooth
+}
+.btn1:hover {
+    transform: translateY(-2px);
+    background-color: black;
+    color: white;
+}
+.btn2:hover {
+    transform: translateY(-2px);
+}
+.btn3:hover {
+    transform: translateY(-2px);
+}
+.btn4:hover {
+    transform: translateY(-2px);
+}
+.btn5:hover {
+    transform: translateY(-2px);
+}
 
-nav ul li a {
+nav ul div li a {
     color: #ffffff;
     text-decoration: none;
-    text-align: right;
-    
+
+    border: 10px solid var(--clr-accent);
+    border-radius: 5px;
 }
 
 main {
-    padding: 10px;
     margin-top: 50px;
     max-width: 1980px;
-
     font-size: xx-large;
     color:#fff;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.about-container {
+    display: flex;
+    
 }
 
 .home {
     padding: 10px;
-    
+    margin-left: 30px;
 }
 
 .home-info {
     font-size: x-large;
-    background: rgba(0,0,0,0.5);
+    
 }
 
 .cubesat-image img {
     width: 700px;
-    height: 700px:
+    height: 700px;
 }
-.about-container {
-    display: flex;
 
+
+.cubesat-info h2 {
+    font-size: 50px;
 }
 .cubesat-info {
     background: rgba(0,0,0,0.5);
     color: #ffffff;
     text-align: left;
     margin-top: 200px;
-    padding: 1rem;
+    margin-bottom: 200px;
+    padding: 2rem;
 }
 
 .mission-container {
@@ -99,12 +143,15 @@ main {
     color: #ffffff;
     max-height: fit-content;
     margin-left: 50px;
-    margin-top: 100px;
-    padding:20px
+    margin-top: 0px;
+    padding:3rem;
 }
 
+.mission h2 {
+    font-size: 50px;
+}
 .impact-container {
-    margin-top: 500px;
+    margin-top: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,12 +165,16 @@ main {
     margin-top: -100px;
     margin-left: 300px;
    
-    padding: 20px;
+    padding: 3rem;
     
     height: fit-content;
 }
 .impact p {
     width:600px;
+}
+
+.impact h2 {
+    font-size: 50px;
 }
 
 .earth-image {
@@ -137,7 +188,43 @@ main {
     color: #ffffff;
     
     margin-top: 200px;
-    padding: 1rem;
+    padding: 3rem;
+}
+
+.contact h2 {
+    margin-bottom: 10px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.contact form label {
+    margin-bottom: 5px;
+}
+
+.contact form input,
+
+.contact form textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact form button:hover {
+    background-color: #0056b3;
 }
 
 footer {
